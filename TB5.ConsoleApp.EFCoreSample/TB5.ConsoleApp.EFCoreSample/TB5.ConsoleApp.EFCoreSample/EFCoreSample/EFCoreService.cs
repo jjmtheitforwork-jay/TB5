@@ -26,7 +26,7 @@ namespace TB5.ConsoleApp.EFCoreSample.EFCoreSample
             TblProduct Product = new TblProduct()
             {
                 Name = "Test",
-                Price = 1000.ToString(),
+                Price = 1000,
 
 
             };
@@ -41,7 +41,7 @@ namespace TB5.ConsoleApp.EFCoreSample.EFCoreSample
                 Console.WriteLine("Product not found");
                 return;
             }
-            itemproduct.Price = 10000.ToString();
+            itemproduct.Price = 10000;
             db.SaveChanges();
             Console.WriteLine(itemproduct.Id);
             Console.WriteLine(itemproduct.Price);
@@ -54,7 +54,7 @@ namespace TB5.ConsoleApp.EFCoreSample.EFCoreSample
             TblProduct Product = new TblProduct()
             {
                 Name = "Test",
-                Price = "1000"
+                Price = 1000
             };
             db.TblProducts.Add(Product);
             int result = db.SaveChanges(); // d kya hma tagl execute lote tr
@@ -70,7 +70,7 @@ namespace TB5.ConsoleApp.EFCoreSample.EFCoreSample
                 Console.WriteLine("Product not found");
                 return;
             }
-            itemproduct.Price = "10000";
+            itemproduct.Price = 10000;
             int result = db.SaveChanges();
             string message = result > 0 ? "Product created successfully." : "Failed to create product.";
             Console.WriteLine(message);
